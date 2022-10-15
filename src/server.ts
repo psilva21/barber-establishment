@@ -1,6 +1,7 @@
 import express from 'express'
 import routes from './controllers'
 import loggerMiddleware from './config/logger'
+import { errors } from 'celebrate'
 
 export default function Server() {
     const app  = express()
@@ -11,6 +12,7 @@ export default function Server() {
         app.use(route.path, route.routes)
     }
     
+    app.use(errors())
     const port = process.env.DEFAULT_PORT
     
     app.listen(port, function() {

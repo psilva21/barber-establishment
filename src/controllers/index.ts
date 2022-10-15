@@ -1,9 +1,9 @@
-import inputRoutes from './input'
+import revenueRoutes from './revenue'
 
 const routes = [
     {
-    path: '/input',
-    routes:  inputRoutes
+    path: '/revenue',
+    routes:  revenueRoutes
     }
 ]
 
