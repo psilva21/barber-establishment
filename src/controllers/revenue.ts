@@ -1,6 +1,6 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { Revenue } from '../interfaces';
-import { InputService } from '../services/revenue';
+import { RevenueService } from '../services/revenue';
 import RevenueValidator from '../validators/revenue';
 
 const router = express.Router()
@@ -8,7 +8,7 @@ const router = express.Router()
 router.post('/', RevenueValidator.create, async function(req: Request, res: Response, next: NextFunction) {
     try {
         const revenue = <Revenue>req.body
-        const createdRevenue = await InputService.registerYield(revenue)
+        const createdRevenue = await RevenueService.register(revenue)
     
         return res.status(200).send(createdRevenue)
     } catch (err) {
@@ -16,9 +16,18 @@ router.post('/', RevenueValidator.create, async function(req: Request, res: Resp
     }
 })
 
-router.get('/', async function(req: Request, res: Response, next: NextFunction) {
+router.get('/', RevenueValidator.filter, async function(req: Request, res: Response, next: NextFunction) {
     try {
-        const revenues = await InputService.getAllRevenues()
+
+        const filterDate = req.query.filterDate as string
+
+        if (filterDate) {
+            const revenues = await RevenueService.getByDate(decodeURIComponent(filterDate))
+
+            return res.status(200).send(revenues)
+        }
+
+        const revenues = await RevenueService.getAll()
 
         return res.status(200).send(revenues)
     } catch (err) {

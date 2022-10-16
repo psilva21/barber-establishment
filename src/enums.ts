@@ -1,5 +1,6 @@
 export enum CollectionName {
-    yield = 'Yield'
+    revenue = 'revenue',
+    JOBS = 'jobs',
 }
 
 export enum Payments {
@@ -7,4 +8,9 @@ export enum Payments {
     debit = 'debit',
     pix = 'pix',
     currency = 'currency',
+}
+
+export enum RevenueType {
+    service = 'service',
+    sale = 'sale',
 }

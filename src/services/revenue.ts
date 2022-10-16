@@ -1,11 +1,14 @@
 import { Revenue } from '../interfaces';
-import { InputRepository } from '../repository/revenue'
+import { RevenueRepository } from '../repository/revenue'
 
-export class InputService {
-    public static registerYield(reqBody: Revenue) {
-       return InputRepository.register(reqBody); 
+export class RevenueService {
+    public static register(reqBody: Revenue) {
+       return RevenueRepository.register(reqBody); 
     }
-    public static getAllRevenues() {
-        return InputRepository.getAll();
+    public static getAll() {
+        return RevenueRepository.getAll();
+    }
+    public static getByDate(date: string) {
+        return RevenueRepository.getByDate(date);
     }
 }

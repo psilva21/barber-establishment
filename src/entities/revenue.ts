@@ -2,16 +2,16 @@ import { model, Schema } from 'mongoose'
 import { CollectionName } from '../enums'
 
 const schema = new Schema({
-    registrationDate: {
+    date: {
         type: Schema.Types.String,
         required: true,
     },
-    yieldType: {
+    type: {
         type: Schema.Types.String,
         required: true,
     },
-    description: {
-        type: Schema.Types.String,
+    service: {
+        type: [Schema.Types.ObjectId],
         required: true,
     },
     value: {
@@ -28,4 +28,4 @@ const schema = new Schema({
     }
 })
 
-export default model(CollectionName.yield, schema)
+export default model(CollectionName.revenue, schema)
