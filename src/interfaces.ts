@@ -16,3 +16,11 @@ export interface Job {
 export interface JobCreation {
     jobs: Job[];
 }
+
+export interface Employee {
+    name: string;
+}
+
+export interface PaymentMethod {
+    title: string;
+}

@@ -6,11 +6,6 @@ const schema = new Schema({
         type: Schema.Types.String,
         required: true,
     },
-    value: {
-        type: Schema.Types.Number,
-        required: true,
-    }
 })
 
-
-export default model(CollectionName.JOBS, schema)
+export default model(CollectionName.PAYMENT_METHOD, schema)

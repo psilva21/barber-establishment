@@ -19,11 +19,11 @@ const schema = new Schema({
         required: true,
     },
     payment: {
-        type: Schema.Types.String,
+        type: Schema.Types.ObjectId,
         required: true,
     },
     responsible: {
-        type: Schema.Types.String,
+        type: Schema.Types.ObjectId,
         required: true,
     }
 })
