@@ -35,4 +35,14 @@ router.get('/', RevenueValidator.filter, async function(req: Request, res: Respo
     }
 })
 
+router.get('/page-resources', async function(req: Request, res: Response, next: NextFunction) {
+    try {
+        const resources = await RevenueService.getResources()
+
+        return res.status(200).send(resources)
+    } catch(err) {
+        next(err)
+    }  
+})
+
 export default router

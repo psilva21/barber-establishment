@@ -12,5 +12,15 @@ const schema = new Schema({
     }
 })
 
+schema.set('toJSON', {
+    virtuals: true,
+    versionKey:false,
+    transform: (doc, converted) => {
+        delete converted._id
+
+        return converted
+    }
+});
+
 
 export default model(CollectionName.JOBS, schema)
