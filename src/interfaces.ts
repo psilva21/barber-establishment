@@ -1,11 +1,9 @@
-import { Payments } from "./enums";
-
 export interface Revenue {
     date: string;
     type: string;
     description: string;
     value: number;
-    payment: Payments; 
+    payment: string; 
     responsible: string;
 }
 
