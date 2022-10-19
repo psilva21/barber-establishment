@@ -17,6 +17,7 @@ export interface JobCreation {
 
 export interface Employee {
     name: string;
+    cpf: string;
 }
 
 export interface PaymentMethod {

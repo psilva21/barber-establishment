@@ -12,4 +12,7 @@ export class EmployeeRepository {
         
         return employees
     }
+    public static async findByCpf(cpf: string) {
+        return Model.find({ cpf })
+    }
 }

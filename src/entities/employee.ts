@@ -6,6 +6,10 @@ const schema = new Schema({
         type: Schema.Types.String,
         required: true,
     },
+    cpf: {
+        type: Schema.Types.String,
+        required: true,
+    }
 })
 
 schema.set('toJSON', {
