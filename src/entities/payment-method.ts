@@ -5,6 +5,7 @@ const schema = new Schema({
     title: {
         type: Schema.Types.String,
         required: true,
+        unique: true,
     },
 })
 
