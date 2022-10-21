@@ -8,7 +8,7 @@ export class EmployeeService {
     }
     public static async create(employee: Employee) {
         const result =  await EmployeeRepository.findByCpf(employee.cpf)
-        
+
         if (result.length) {
             throw new ApiError('Empregado Já cadastrado').withStatus(400)
         }

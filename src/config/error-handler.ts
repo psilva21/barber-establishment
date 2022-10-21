@@ -8,9 +8,9 @@ function errorRequestHandler(error: Error | CelebrateError | ApiError, req: Requ
     }
 
     if (error instanceof ApiError) {
-        console.log(error);
-        
-        return res.status(error.status).send(error.message)
+        return res.status(error.status).send({
+            message: error.message 
+        })
     }
 
 

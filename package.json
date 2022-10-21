@@ -23,6 +23,7 @@
   "dependencies": {
     "celebrate": "15.0.1",
     "cors": "2.8.5",
-    "mongoose": "6.6.5"
+    "mongoose": "6.6.5",
+    "winston": "3.8.2"
   }
 }

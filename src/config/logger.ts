@@ -1,5 +1,10 @@
-import morgan from 'morgan'
-// @TODO add custom config
-const loggerMiddleware = morgan('tiny')
+import winston from 'winston';
 
-export default loggerMiddleware
+const logger = winston.createLogger({
+    level: 'info',
+    transports: [
+      new winston.transports.Console(),
+    ]
+});
+
+export default logger;
