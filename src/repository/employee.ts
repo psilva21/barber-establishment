@@ -15,4 +15,7 @@ export class EmployeeRepository {
     public static async findByCpf(cpf: string) {
         return Model.find({ cpf })
     }
+    public static async getById(id: string) {
+        return Model.findOne({ id })
+    }
 }

@@ -8,4 +8,7 @@ export class PaymentMethodService {
     public static create(payment: PaymentMethod) {
         return PaymentMethodRepository.create(payment); 
     }
+    public static getById(id: string) {
+        return PaymentMethodRepository.getById(id);
+    } 
 }

@@ -12,4 +12,10 @@ export class PaymentMethodRepository {
         
         return paymentMethods
     }
+    public static async getById(id: string){
+        const payment = await Model.findOne({ _id: id})
+
+        return payment
+    }
+
 }

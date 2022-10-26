@@ -10,9 +10,18 @@ export class EmployeeService {
         const result =  await EmployeeRepository.findByCpf(employee.cpf)
 
         if (result.length) {
-            throw new ApiError('Empregado Já cadastrado').withStatus(400)
+            throw new ApiError('Colaborador Já cadastrado').withStatus(400)
         }
 
         return EmployeeRepository.create(employee); 
+    }
+    public static async getById(id: string){
+        const employee =  await EmployeeRepository.getById(id)
+
+        if (!employee) {
+            throw new ApiError('Colaborador não encontrado').withStatus(400)
+        }
+
+        return employee
     }
 }
